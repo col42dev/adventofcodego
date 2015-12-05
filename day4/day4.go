@@ -13,7 +13,7 @@ var prefix = "yzbqklnj"
 func day4(l int) int {
 	res := 0
 	target := strings.Repeat("0", l)
-	for i := 0; i < 9999999; i++ {	
+	for i := 0; ; i++ {	
 			m := md5.Sum([]byte(prefix + strconv.Itoa(i)))
 			hex := hex.EncodeToString(m[:])
 			if strings.HasPrefix(hex, target) {
